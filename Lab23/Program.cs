@@ -15,28 +15,28 @@ namespace Lab23
 
             FactorialAsync(n);
 
-            int result = 1;
+            ulong result = 1;
             for (int i = 1; i < n+1; i++)
-                result *= i;
+                result *= (ulong)i;
            
             Console.WriteLine($"Main: факториал {n} = {result}");
 
             Console.ReadKey();
         }
 
-        static int Factorial(int n)
+        static ulong Factorial(int n)
         {
-            int fact = 1;
+            ulong fact = 1;
             
             for (int i = 1; i <= n; i++)
-                fact *= i;
+                fact *= (ulong)i;
            
             return fact;
         }
 
         static async void FactorialAsync(int n)
         {
-            int factorial = await Task.Run(() => Factorial(n));
+            ulong factorial = await Task.Run(() => Factorial(n));
             Console.WriteLine($"FactorialAsync: Факториал {n} = {factorial}");
         }
     }
